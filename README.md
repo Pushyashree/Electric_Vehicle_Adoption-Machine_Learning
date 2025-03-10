@@ -17,14 +17,11 @@ Key research components include:
 ---
 
 ## 📂 Repository Structure  
-
+Note: Only EDA notebook and R scripts have been uploaded for now as outputs and datasets are subject to privacy. If you need any details or want to have a dicussion about the topic please don't hesitate to contact me (Details in Author section)
 ```bash
 📁 Master_Thesis_Repository  
 │── 📄 README.md            # Project documentation  
-│── 📁 Data                 # Contains cleaned datasets used for analysis  
 │── 📁 Scripts              # R scripts for data preprocessing, modeling, and visualization  
-│── 📁 Results              # Model outputs, tables, and figures  
-│── 📄 Thesis.pdf           # Final thesis document
 ```
 
 ## 📊 Methodology
