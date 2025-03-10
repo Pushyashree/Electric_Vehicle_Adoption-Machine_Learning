@@ -39,7 +39,7 @@ Validated latent constructs such as environmental concerns, mobility behavior, a
 3. Multinomial Logit Model (MNL)
 Estimated baseline mode choice behavior for MEVs and EVs.
 
-4. Mixed Logit Model (MXL)
+4. Mixed Logit Model (MLM)
 Accounted for random preference heterogeneity in choice behavior.
 
 5. Latent Class Analysis (LCA) & Latent Class Model (LCM)
