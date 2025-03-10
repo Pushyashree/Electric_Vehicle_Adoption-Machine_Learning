@@ -11,7 +11,7 @@ The study investigates how **individual preferences, socio-demographic factors, 
 Key research components include:  
 - **Survey-based stated choice experiment** to gather user preferences.  
 - **Factor analysis and confirmatory factor analysis (CFA)** to uncover latent variables influencing choice behavior.  
-- **Multinomial Logit (MNL) and Mixed Logit Models (MXL)** for robust preference estimation.  
+- **Multinomial Logit (MNL) and Mixed Logit Models (MLM)** for robust preference estimation.  
 - **Latent Class Models (LCM) and Hybrid Choice Models (HCM)** to capture heterogeneity in user behavior.  
 
 ---
