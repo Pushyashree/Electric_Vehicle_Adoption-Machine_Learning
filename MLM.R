@@ -144,7 +144,6 @@ ggplot(data, aes(x = Car_Usage_Intensity)) +
 # Save the updated data with latent scores to a CSV file
 #write.csv(data, "Data_with_Latent_Scores.csv", row.names = FALSE)
 
-
 #Mixed Logit Model
 
 library(dplyr)
