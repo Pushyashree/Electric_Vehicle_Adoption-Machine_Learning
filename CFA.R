@@ -57,7 +57,6 @@ standardizedSolution(fit)
 # These scores can be used in further analyses (e.g., regression or clustering)
 factor_scores <- lavPredict(fit)
 
-
 # Save factor scores to a CSV file for future use if needed
 #write.csv(factor_scores, "factor_scores.csv", row.names = FALSE)
 
@@ -84,39 +83,7 @@ ggplot(factor_scores, aes(x = Car_Usage_Intensity)) +
   labs(title = "Distribution of Car Usage Intensity Scores", x = "Car Usage Intensity", y = "Density") +
   theme_minimal()
 
-
-
-library(dplyr)
-factor_scores_df <- as.data.frame(factor_scores)
-
-# Separate individuals based on positive or negative scores for each latent variable
-positive_car_usage <- factor_scores_df %>% filter(Car_Usage_Intensity > 0)
-negative_car_usage <- factor_scores_df %>% filter(Car_Usage_Intensity < 0)
-
-positive_envi_concern <- factor_scores_df %>% filter(Environmental_Concern > 0)
-negative_envi_concern <- factor_scores_df %>% filter(Environmental_Concern < 0)
-
-# Summary Statistics for Interpretation
-summary_positive_car <- summary(positive_car_usage$Car_Usage_Intensity)
-summary_negative_car <- summary(negative_car_usage$Car_Usage_Intensity)
-
-summary_positive_envi <- summary(positive_envi_concern$Environmental_Concern)
-summary_negative_envi <- summary(negative_envi_concern$Environmental_Concern)
-
-# Print summaries for interpretation
-print("Positive Car Usage Intensity Summary:")
-print(summary_positive_car)
-print("Negative Car Usage Intensity Summary:")
-print(summary_negative_car)
-
-print("Positive Environmental Concern Summary:")
-print(summary_positive_envi)
-print("Negative Environmental Concern Summary:")
-print(summary_negative_envi)
-
-
-
-
+#Model and Factor Scores with Co-variances
 library(lavaan)
 library(readr)
 df <- read_csv("Processed_data_final.csv")
@@ -128,7 +95,6 @@ model <- '
   Range_EV ~~ TopSpeed_EV
   Range_MEV ~~ TopSpeed_MEV
 '
-
 # Fit the model
 fit <- cfa(model, data = df_cfa)
 
@@ -137,7 +103,6 @@ summary(fit, fit.measures = TRUE, standardized = TRUE)
 
 # Fit indices
 fitMeasures(fit, c("cfi", "tli", "rmsea", "srmr"))
-
 
 # Extract and view factor loadings for each indicator on its latent variable
 # Higher loadings (close to 1) suggest that the indicator strongly represents the latent variable
@@ -148,6 +113,7 @@ factor_scores <- lavPredict(fit)
 library(semPlot)
 semPaths(fit, "std", layout = "tree", whatLabels = "std", edge.label.cex = 0.8)
 
+#Visualisations of the score distribution
 library(semPlot)
 library(ggplot2)
 library(readr)
